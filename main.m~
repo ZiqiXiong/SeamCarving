@@ -1,6 +1,0 @@
-I = im2double(imread('castle.jpg'));
-E = energyMatrix(I);
-
-M = E;
-[h]
-for 

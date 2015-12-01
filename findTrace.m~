@@ -1,7 +1,0 @@
-function trace = findTrace(M,T,start)
-    [height, width] = size(M);
-    trace = 1:1:height;
-    for height:-1:1
-        
-    end
-end
