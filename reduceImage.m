@@ -6,7 +6,6 @@ function I = reduceImage(I,vseams,hseams)
         [~,min_ind] = min(M(height,:));
         trace = findTrace(M,T,min_ind);
         I = removeSeam(I,trace);
-        display(['remove' v ' vertical seams'])
     end
     
     I = imrotate(I,-90);
@@ -17,7 +16,6 @@ function I = reduceImage(I,vseams,hseams)
         [~,min_ind] = min(M(height,:));
         trace = findTrace(M,T,min_ind);
         I = removeSeam(I,trace);
-        display(['remove' v ' horizontal seams'])
     end
     
     I = imrotate(I,90);
