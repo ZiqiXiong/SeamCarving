@@ -5,7 +5,7 @@ function [M,T] = scoreMatrix(E)
 
     for h = 2:height
         for w = 1:width
-            if and(not(w==width),not(w==1))
+            if and(not(w==width),not(2==1))
                 prev = [M(h-1,w-1), M(h-1,w), M(h-1,w+1)];
                
             elseif w == width
