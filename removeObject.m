@@ -1,7 +1,12 @@
-function I = removeObject(I)
-    J=I;
+function I = removeObject(I,direction,visualization)
+    if visualization
+        J=I;
+    end
     removedRegion=roipoly(I(:,:,1:3));
-    while hasObject(I,removedRegion) == 1
+    if direction == 'h'
+            I = imrotate(I,-90);
+    end
+    while hasObject(I,removedRegion) 
         [height,~,~] = size(I);
         E = energyMatrix(I);
         E_weight = biasEnergyWeight(I,removedRegion); 
@@ -9,8 +14,16 @@ function I = removeObject(I)
         [~,min_ind] = min(M(height,:));      
         trace = findTrace(M,T,min_ind);
         I = removeSeam(I,trace);
-        H=markImage(J,I);
-        imshow(H(:,:,1:3));
+        if visualization
+            if direction == 'h'
+                H=markImage(J,imrotate(I,-90));
+            else
+                H=markImage(J,I);
+            end
+            imshow(H(:,:,1:3));
+        end
     end
-
+    if direction == 'h'
+            I = imrotate(I,90);
+    end
 end
