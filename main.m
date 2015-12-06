@@ -1,12 +1,19 @@
 clear;
 figure
-subplot(1,3,1)
-I = im2double(imread('small_castle.jpg'));
+tic
+I = im2double(imread('images/castle.JPG'));
 I = attachPositionToImage(I);
-imshow(I(:,:,1:3))
-subplot(1,3,2)
-J = resizeImage(I,-100,-50);
-imshow(J(:,:,1:3));
-subplot(1,3,3)
+J = removeObject(I);
 H = markImage(I,J);
+% J = resizeImage(I,-100,-50);
+
+figure
+subplot(1,3,1)
+imshow(I(:,:,1:3))
+
+subplot(1,3,2)
+imshow(J(:,:,1:3));
+
+subplot(1,3,3)
 imshow(H(:,:,1:3));
+% toc
