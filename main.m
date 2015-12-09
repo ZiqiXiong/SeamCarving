@@ -1,16 +1,16 @@
 clear;
-figure
 tic
 I = im2double(imread('images/castle.jpg'));
 I = attachPositionToImage(I);
-J = removeObject(I,'h',1);
-%J = resizeImage(I,-100,-50);
+J = removeObject(I,'v',1);
+%J = resizeImage(I,-100,-50,1);
 
 figure
-subplot(1,2,1)
+title('original image')
 imshow(I(:,:,1:3))
 
-subplot(1,2,2)
+figure
+title('new image')
 imshow(J(:,:,1:3));
 
 % toc
