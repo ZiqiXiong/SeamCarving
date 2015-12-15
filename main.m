@@ -1,7 +1,7 @@
 clear;
 figure
 tic
-I = im2double(imread('images/castle.jpg'));
+I = im2double(imread('images/007-2.jpg'));
 I = attachPositionToImage(I);
 J = removeObject(I,'h',1);
 %J = resizeImage(I,-100,-50);
