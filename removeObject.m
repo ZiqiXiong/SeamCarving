@@ -1,4 +1,5 @@
-function I = removeObject(I,direction,visualization)
+function I = removeObject(I,direction,visualization,handles)
+    axes(handles.imageDisp);    
     if visualization
         J=I;
     end
@@ -22,6 +23,7 @@ function I = removeObject(I,direction,visualization)
                 H=markImage(J,I);
             end
             imshow(H(:,:,1:3));
+            drawnow
         end
     end
     if direction == 'h'

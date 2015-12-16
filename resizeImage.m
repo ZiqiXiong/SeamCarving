@@ -1,4 +1,5 @@
-function I = resizeImage(I,vseams,hseams,visualization)
+function I = resizeImage(I,vseams,hseams,visualization, handles)
+    axes(handles.imageDisp);
     if visualization
         J = I;
     end
@@ -15,7 +16,8 @@ function I = resizeImage(I,vseams,hseams,visualization)
         end
         if visualization
             H = markImage(J,I);
-            imshow(H(:,:,1:3))
+            imshow(H(:,:,1:3), 'Parent', handles.imageDisp)
+            drawnow
         end
     end
     
@@ -33,7 +35,8 @@ function I = resizeImage(I,vseams,hseams,visualization)
         end
         if visualization
             H = markImage(J,imrotate(I,-90));
-            imshow(H(:,:,1:3))
+            imshow(H(:,:,1:3),'Parent', handles.imageDisp)
+            drawnow
         end
     end
     

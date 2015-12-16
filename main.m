@@ -1,9 +1,9 @@
 clear;
-tic
-I = im2double(imread('images/007-2.jpg'));
+%tic
+I = im2double(imread('images/castle.jpg'));
 I = attachPositionToImage(I);
-J = removeObject(I,'v',1);
-%J = resizeImage(I,-100,-50,1);
+%J = removeObject(I,'v',1);
+J = resizeImage(I,-100,-50,1);
 
 figure
 title('original image')
